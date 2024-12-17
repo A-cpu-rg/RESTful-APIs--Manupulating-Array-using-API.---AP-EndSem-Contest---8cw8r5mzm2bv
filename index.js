@@ -58,7 +58,7 @@ app.delete('/delete/:index', (req, res) => {
     try{
         const {num , index} = req.body;
         if(!num || !index){
-            return res.status(400).json({error:"Invalid index"})
+            return res.status(400).json({error:"Index invalid"})
         }
     }catch(error){
         console.error(error)
