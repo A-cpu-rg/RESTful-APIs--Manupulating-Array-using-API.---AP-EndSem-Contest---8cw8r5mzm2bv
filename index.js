@@ -7,10 +7,13 @@ let numberArray = [];
 
 // GET:
 app.get('/sum', (req, res) => {
-    const {num , arr} = req.body
-    if (!num || !arr.length === 0){
-        return res.status(200).json({message:"arr is empty"})
-    } 
+    const {sum} = req.body;
+    if(sum===0){
+        return res.status(200).json({sum :sum})
+    }
+    if (sum ===sum++){
+        return res.status(200).json({message:"sum of number"})
+    }
 });
 
 // POST: 
@@ -57,6 +60,9 @@ app.delete('/delete/:index', (req, res) => {
         if(!num || !index){
             return res.status(400).json({error:"Invalid index"})
         }
+    }catch(error){
+        console.error(error)
+        return res.status(500).json({message:"internal server error"})
     }
 });
 
